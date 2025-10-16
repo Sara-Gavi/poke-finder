@@ -11,7 +11,7 @@ Logos and images were designed by me or come from royalty-free sources or AI-gen
 ## 🖼️ Screenshots
 
 **Landing Page**  
-<img src="./public/landingpoke.png" alt="Landing page" width="300" />
+<img src="./public/LandingPoke.png" alt="Landing page" width="300" />
 
 ---
 
