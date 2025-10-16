@@ -9,16 +9,17 @@ function FinderPage() {
   const [nameFilter, setNameFilter] = useState("");
   const [expandedCharacter, setExpandedCharacter] = useState(null);
 
-  // Fetch Pokémon data from PokéAPI
+  // Fetch Pokémon data from PokéAPI (first 151)
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
       .then((response) => response.json())
       .then((data) => {
+        // Map through all Pokémon and fetch details
         const detailPromises = data.results.map(async (pokemon) => {
           const res = await fetch(pokemon.url);
           const details = await res.json();
 
-          // Second fetch to get species info - for description
+          // Second fetch to get species info (for description)
           const speciesRes = await fetch(
             `https://pokeapi.co/api/v2/pokemon-species/${details.id}`
           );
